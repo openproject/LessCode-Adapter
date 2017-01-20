@@ -1,55 +1,21 @@
-[![Jcenter Status](https://api.bintray.com/packages/openproject/maven/lesscode-debug/images/download.svg)](https://bintray.com/openproject/maven/lesscode-debug)
+[![Jcenter Status](https://api.bintray.com/packages/openproject/maven/lesscode-adapter/images/download.svg)](https://bintray.com/openproject/maven/lesscode-adapter)
 
-# LessCode-Debug
-a common ui for app debug info to show or something else
+# Lesscode-Adapter
+a common adapter library for android app
 
 ## Gradle
 
 ```groovy
-compile('com.jayfeng:lesscode-debug:2.0');
+compile('com.jayfeng:lesscode-adapter:0.1');
 ```
 
 ## Overview
-> * 简单清晰
-> * 易于扩展
-> * 开源
+> * common Adapter
+> * easy
+> * open source
 
 ## Usage
-继承DebugActivity，重载fillValues(List<DebugKV> debugKVList)方法：
 ```java
-public class MyDebugActivity extends DebugActivity {
-
-    @Override
-    protected void fillValues(List<DebugKV> debugKVList) {
-        debugKVList.add(new DebugKV("UserToken", "11111111111111111111"));
-        debugKVList.add(new DebugKV("UserToken2", "2222"));
-        debugKVList.add(new DebugKV("UserToken3", "333"));
-        debugKVList.add(new DebugKV("UserToken4", "444"));
-        debugKVList.add(new DebugKV("UserToken5", "11111111111111111111"));
-        debugKVList.add(new DebugKV("UserToken6", "11111111111111111111"));
-        debugKVList.add(new DebugKV("UserToken7", "11111111111111111111"));
-        debugKVList.add(new DebugKV("AndroidId", "next to do"));
-    }
-
-    @Override
-    protected void fillApiValues(List<DebugApi> debugApiList) {
-        debugApiList.add(new DebugApi("通用 - 全局字典", "common/dict", new DebugApiCallBack() {
-            @Override
-            public void invoke(Context context, DebugApi debugApi, RecyclerView.Adapter adapter) {
-                updateDebugApiToFailure(debugApi, adapter);
-                Toast.makeText(context, "tttttttttttttttttt", Toast.LENGTH_SHORT).show();
-                showDebugApiLog("xxxxx");
-            }
-        }));
-        debugApiList.add(new DebugApi("通用 - 检查更新", "common/update", new DebugApiCallBack() {
-            @Override
-            public void invoke(Context context, DebugApi debugApi, RecyclerView.Adapter adapter) {
-                updateDebugApiToSuccess(debugApi, adapter);
-                Toast.makeText(context, "ooiiiiiii", Toast.LENGTH_SHORT).show();
-            }
-        }, false));
-    }
-}
 ```
 
 ## Author

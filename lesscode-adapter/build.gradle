@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-version = "0.1"
+version = "0.2"
 
 android {
     compileSdkVersion 25
@@ -81,7 +81,7 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 }
 
 artifacts {
-    // archives javadocJar
+    archives javadocJar
     archives sourcesJar
 }
 
